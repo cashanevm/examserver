@@ -6,10 +6,9 @@ const pool = new Pool({
   password: 'mit21',
   port: 5432,
   ssl:{rejectUnauthorized: false}
-})
-
+}) 
 const getUsers = (request, response) => {
-  pool.query('SELECT * FROM table_sample ORDER BY id ASC', (error, results) => {
+  pool.query('SELECT * FROM table_sample', (error, results) => {
     if (error) {
       throw error
     }
