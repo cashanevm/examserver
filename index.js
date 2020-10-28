@@ -4,7 +4,7 @@ const app = express()
 const db = require('./queries')
 const port = process.env.PORT || 3000
 
-header("Access-Control-Allow-Origin:*")
+
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
