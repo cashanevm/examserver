@@ -8,7 +8,7 @@ const pool = new Pool({
   ssl:{rejectUnauthorized: false}
 }) 
 const getUsers = (request, response) => {
-  pool.query('SELECT * FROM store', (error, results) => {
+  pool.query('SELECT * FROM userdata', (error, results) => {
     if (error) {
       throw error
     }
@@ -19,7 +19,7 @@ const getUsers = (request, response) => {
 const getUserById = (request, response) => {
   const id = parseInt(request.params.id)
 
-  pool.query('SELECT * FROM store WHERE id = $1', [id], (error, results) => {
+  pool.query('SELECT * FROM userdata WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
